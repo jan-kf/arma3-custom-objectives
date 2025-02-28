@@ -23,28 +23,39 @@ class DefuseDialog
     movingEnable = false;
     onLoad = "uiNamespace setVariable ['DefuseDialog', _this select 0]; [] spawn YOSHI_CO_fnc_setupButtons;";
     class controlsBackground {
-        class Background: RscText {
+        class Background: RscPictureKeepAspect {
             idc = -1;
-            x = 12 * GUI_GRID_W + GUI_GRID_X;
-            y = 0 * GUI_GRID_H + GUI_GRID_Y;
-            w = 14 * GUI_GRID_W;
-            h = 17 * GUI_GRID_H;
+            x = 13.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 3 * GUI_GRID_H + GUI_GRID_Y;
+            w = 12 * GUI_GRID_W;
+            h = 12 * GUI_GRID_H;
+            text = "\yoshi-custom-objectives\UI\complexWiresModuleBackground.paa";
             colorBackground[] = {0, 0, 0, 0.7}; // Dark transparent background
         };
     };
 
     class controls
     {
-        class RscText_1000: RscText
+        // class RscText_1000: RscText
+        // {
+        //     idc = 1000;
+        //     text = "Complex Wires"; //--- ToDo: Localize;
+        //     x = 14 * GUI_GRID_W + GUI_GRID_X;
+        //     y = 0.5 * GUI_GRID_H + GUI_GRID_Y;
+        //     w = 11 * GUI_GRID_W;
+        //     h = 2 * GUI_GRID_H;
+        //     colorBackground[] = {0,0,0,0};
+        //     sizeEx = 2 * GUI_GRID_H;
+        // };
+
+        class StatusIndicator: RscPictureKeepAspect
         {
             idc = 1000;
-            text = "Complex Wires"; //--- ToDo: Localize;
-            x = 14.5 * GUI_GRID_W + GUI_GRID_X;
-            y = 0.5 * GUI_GRID_H + GUI_GRID_Y;
-            w = 11 * GUI_GRID_W;
+            x = 22.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 3.5 * GUI_GRID_H + GUI_GRID_Y;
+            w = 2 * GUI_GRID_W;
             h = 2 * GUI_GRID_H;
-            colorBackground[] = {0,0,0,0};
-            sizeEx = 2 * GUI_GRID_H;
+            text = "\yoshi-custom-objectives\UI\moduleDoneLightOff.paa";
         };
 
         class RscButton_1600: WireButton
@@ -52,66 +63,60 @@ class DefuseDialog
             idc = 1600;
             x = 15 * GUI_GRID_W + GUI_GRID_X;
             y = 5 * GUI_GRID_H + GUI_GRID_Y;
-            w = 8 * GUI_GRID_W;
-            h = 1 * GUI_GRID_H;
+            w = 1 * GUI_GRID_W;
+            h = 8 * GUI_GRID_H;
             text = "";
             action = "[0] call YOSHI_CO_fnc_handleButton;";
-            textureNoShortcut = "\yoshi-custom-objectives\UI\wireNone.paa";
         };
         class RscButton_1601: WireButton
         {
             idc = 1601;
-            x = 15 * GUI_GRID_W + GUI_GRID_X;
-            y = 7 * GUI_GRID_H + GUI_GRID_Y;
-            w = 8 * GUI_GRID_W;
-            h = 1 * GUI_GRID_H;
+            x = 16 * GUI_GRID_W + GUI_GRID_X;
+            y = 5 * GUI_GRID_H + GUI_GRID_Y;
+            w = 1 * GUI_GRID_W;
+            h = 8 * GUI_GRID_H;
             text = "";
             action = "[1] call YOSHI_CO_fnc_handleButton;";
-            textureNoShortcut = "\yoshi-custom-objectives\UI\wireNone.paa";
         };
         class RscButton_1602: WireButton
         {
             idc = 1602;
-            x = 15 * GUI_GRID_W + GUI_GRID_X;
-            y = 9 * GUI_GRID_H + GUI_GRID_Y;
-            w = 8 * GUI_GRID_W;
-            h = 1 * GUI_GRID_H;
+            x = 17 * GUI_GRID_W + GUI_GRID_X;
+            y = 5 * GUI_GRID_H + GUI_GRID_Y;
+            w = 1 * GUI_GRID_W;
+            h = 8 * GUI_GRID_H;
             text = "";
             action = "[2] call YOSHI_CO_fnc_handleButton;";
-            textureNoShortcut = "\yoshi-custom-objectives\UI\wireNone.paa";
         };
         class RscButton_1603: WireButton
         {
             idc = 1603;
-            x = 15 * GUI_GRID_W + GUI_GRID_X;
-            y = 11 * GUI_GRID_H + GUI_GRID_Y;
-            w = 8 * GUI_GRID_W;
-            h = 1 * GUI_GRID_H;
+            x = 18 * GUI_GRID_W + GUI_GRID_X;
+            y = 5 * GUI_GRID_H + GUI_GRID_Y;
+            w = 1 * GUI_GRID_W;
+            h = 8 * GUI_GRID_H;
             text = "";
             action = "[3] call YOSHI_CO_fnc_handleButton;";
-            textureNoShortcut = "\yoshi-custom-objectives\UI\wireNone.paa";
         };
         class RscButton_1604: WireButton
         {
             idc = 1604;
-            x = 15 * GUI_GRID_W + GUI_GRID_X;
-            y = 13 * GUI_GRID_H + GUI_GRID_Y;
-            w = 8 * GUI_GRID_W;
-            h = 1 * GUI_GRID_H;
+            x = 19 * GUI_GRID_W + GUI_GRID_X;
+            y = 5 * GUI_GRID_H + GUI_GRID_Y;
+            w = 1 * GUI_GRID_W;
+            h = 8 * GUI_GRID_H;
             text = "";
             action = "[4] call YOSHI_CO_fnc_handleButton;";
-            textureNoShortcut = "\yoshi-custom-objectives\UI\wireNone.paa";
         };
         class RscButton_1605: WireButton
         {
             idc = 1605;
-            x = 15 * GUI_GRID_W + GUI_GRID_X;
-            y = 15 * GUI_GRID_H + GUI_GRID_Y;
-            w = 8 * GUI_GRID_W;
-            h = 1 * GUI_GRID_H;
+            x = 20 * GUI_GRID_W + GUI_GRID_X;
+            y = 5 * GUI_GRID_H + GUI_GRID_Y;
+            w = 1 * GUI_GRID_W;
+            h = 8 * GUI_GRID_H;
             text = "";
             action = "[5] call YOSHI_CO_fnc_handleButton;";
-            textureNoShortcut = "\yoshi-custom-objectives\UI\wireNone.paa";
         };
 
         class RscButton_1400: RscPictureKeepAspect
@@ -119,54 +124,54 @@ class DefuseDialog
             idc = 1400;
             x = 15 * GUI_GRID_W + GUI_GRID_X;
             y = 5 * GUI_GRID_H + GUI_GRID_Y;
-            w = 8 * GUI_GRID_W;
-            h = 1 * GUI_GRID_H;
-            text = "\yoshi-custom-objectives\UI\wireNone.paa";
+            w = 1 * GUI_GRID_W;
+            h = 8 * GUI_GRID_H;
+            text = "\yoshi-custom-objectives\UI\wireNone_vert.paa";
         };
         class RscButton_1401: RscPictureKeepAspect
         {
             idc = 1401;
-            x = 15 * GUI_GRID_W + GUI_GRID_X;
-            y = 7 * GUI_GRID_H + GUI_GRID_Y;
-            w = 8 * GUI_GRID_W;
-            h = 1 * GUI_GRID_H;
-            text = "\yoshi-custom-objectives\UI\wireNone.paa";
+            x = 16 * GUI_GRID_W + GUI_GRID_X;
+            y = 5 * GUI_GRID_H + GUI_GRID_Y;
+            w = 1 * GUI_GRID_W;
+            h = 8 * GUI_GRID_H;
+            text = "\yoshi-custom-objectives\UI\wireNone_vert.paa";
         };
         class RscButton_1402: RscPictureKeepAspect
         {
             idc = 1402;
-            x = 15 * GUI_GRID_W + GUI_GRID_X;
-            y = 9 * GUI_GRID_H + GUI_GRID_Y;
-            w = 8 * GUI_GRID_W;
-            h = 1 * GUI_GRID_H;
-            text = "\yoshi-custom-objectives\UI\wireNone.paa";
+            x = 17 * GUI_GRID_W + GUI_GRID_X;
+            y = 5 * GUI_GRID_H + GUI_GRID_Y;
+            w = 1 * GUI_GRID_W;
+            h = 8 * GUI_GRID_H;
+            text = "\yoshi-custom-objectives\UI\wireNone_vert.paa";
         };
         class RscButton_1403: RscPictureKeepAspect
         {
             idc = 1403;
-            x = 15 * GUI_GRID_W + GUI_GRID_X;
-            y = 11 * GUI_GRID_H + GUI_GRID_Y;
-            w = 8 * GUI_GRID_W;
-            h = 1 * GUI_GRID_H;
-            text = "\yoshi-custom-objectives\UI\wireNone.paa";
+            x = 18 * GUI_GRID_W + GUI_GRID_X;
+            y = 5 * GUI_GRID_H + GUI_GRID_Y;
+            w = 1 * GUI_GRID_W;
+            h = 8 * GUI_GRID_H;
+            text = "\yoshi-custom-objectives\UI\wireNone_vert.paa";
         };
         class RscButton_1404: RscPictureKeepAspect
         {
             idc = 1404;
-            x = 15 * GUI_GRID_W + GUI_GRID_X;
-            y = 13 * GUI_GRID_H + GUI_GRID_Y;
-            w = 8 * GUI_GRID_W;
-            h = 1 * GUI_GRID_H;
-            text = "\yoshi-custom-objectives\UI\wireNone.paa";
+            x = 19 * GUI_GRID_W + GUI_GRID_X;
+            y = 5 * GUI_GRID_H + GUI_GRID_Y;
+            w = 1 * GUI_GRID_W;
+            h = 8 * GUI_GRID_H;
+            text = "\yoshi-custom-objectives\UI\wireNone_vert.paa";
         };
         class RscButton_1405: RscPictureKeepAspect
         {
             idc = 1405;
-            x = 15 * GUI_GRID_W + GUI_GRID_X;
-            y = 15 * GUI_GRID_H + GUI_GRID_Y;
-            w = 8 * GUI_GRID_W;
-            h = 1 * GUI_GRID_H;
-            text = "\yoshi-custom-objectives\UI\wireNone.paa";
+            x = 20 * GUI_GRID_W + GUI_GRID_X;
+            y = 5 * GUI_GRID_H + GUI_GRID_Y;
+            w = 1 * GUI_GRID_W;
+            h = 8 * GUI_GRID_H;
+            text = "\yoshi-custom-objectives\UI\wireNone_vert.paa";
         };
 
 
@@ -174,8 +179,8 @@ class DefuseDialog
         {
             idc = 1200;
             text = "\yoshi-custom-objectives\UI\led_off_8x8.paa";
-            x = 12.5 * GUI_GRID_W + GUI_GRID_X;
-            y = 5 * GUI_GRID_H + GUI_GRID_Y;
+            x = 15 * GUI_GRID_W + GUI_GRID_X;
+            y = 4 * GUI_GRID_H + GUI_GRID_Y;
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
@@ -183,8 +188,8 @@ class DefuseDialog
         {
             idc = 1201;
             text = "\yoshi-custom-objectives\UI\led_off_8x8.paa";
-            x = 12.5 * GUI_GRID_W + GUI_GRID_X;
-            y = 7 * GUI_GRID_H + GUI_GRID_Y;
+            x = 16 * GUI_GRID_W + GUI_GRID_X;
+            y = 4 * GUI_GRID_H + GUI_GRID_Y;
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
@@ -192,8 +197,8 @@ class DefuseDialog
         {
             idc = 1202;
             text = "\yoshi-custom-objectives\UI\led_off_8x8.paa";
-            x = 12.5 * GUI_GRID_W + GUI_GRID_X;
-            y = 9 * GUI_GRID_H + GUI_GRID_Y;
+            x = 17 * GUI_GRID_W + GUI_GRID_X;
+            y = 4 * GUI_GRID_H + GUI_GRID_Y;
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
@@ -201,8 +206,8 @@ class DefuseDialog
         {
             idc = 1203;
             text = "\yoshi-custom-objectives\UI\led_off_8x8.paa";
-            x = 12.5 * GUI_GRID_W + GUI_GRID_X;
-            y = 11 * GUI_GRID_H + GUI_GRID_Y;
+            x = 18 * GUI_GRID_W + GUI_GRID_X;
+            y = 4 * GUI_GRID_H + GUI_GRID_Y;
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
@@ -210,8 +215,8 @@ class DefuseDialog
         {
             idc = 1204;
             text = "\yoshi-custom-objectives\UI\led_off_8x8.paa";
-            x = 12.5 * GUI_GRID_W + GUI_GRID_X;
-            y = 13 * GUI_GRID_H + GUI_GRID_Y;
+            x = 19 * GUI_GRID_W + GUI_GRID_X;
+            y = 4 * GUI_GRID_H + GUI_GRID_Y;
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
@@ -219,8 +224,8 @@ class DefuseDialog
         {
             idc = 1205;
             text = "\yoshi-custom-objectives\UI\led_off_8x8.paa";
-            x = 12.5 * GUI_GRID_W + GUI_GRID_X;
-            y = 15 * GUI_GRID_H + GUI_GRID_Y;
+            x = 20 * GUI_GRID_W + GUI_GRID_X;
+            y = 4 * GUI_GRID_H + GUI_GRID_Y;
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
@@ -229,8 +234,8 @@ class DefuseDialog
         {
             idc = 1300;
             text = "\yoshi-custom-objectives\UI\noStar.paa";
-            x = 24.5 * GUI_GRID_W + GUI_GRID_X;
-            y = 5 * GUI_GRID_H + GUI_GRID_Y;
+            x = 15 * GUI_GRID_W + GUI_GRID_X;
+            y = 13 * GUI_GRID_H + GUI_GRID_Y;
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
@@ -238,8 +243,8 @@ class DefuseDialog
         {
             idc = 1301;
             text = "\yoshi-custom-objectives\UI\noStar.paa";
-            x = 24.5 * GUI_GRID_W + GUI_GRID_X;
-            y = 7 * GUI_GRID_H + GUI_GRID_Y;
+            x = 16 * GUI_GRID_W + GUI_GRID_X;
+            y = 13 * GUI_GRID_H + GUI_GRID_Y;
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
@@ -247,8 +252,8 @@ class DefuseDialog
         {
             idc = 1302;
             text = "\yoshi-custom-objectives\UI\noStar.paa";
-            x = 24.5 * GUI_GRID_W + GUI_GRID_X;
-            y = 9 * GUI_GRID_H + GUI_GRID_Y;
+            x = 17 * GUI_GRID_W + GUI_GRID_X;
+            y = 13 * GUI_GRID_H + GUI_GRID_Y;
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
@@ -256,8 +261,8 @@ class DefuseDialog
         {
             idc = 1303;
             text = "\yoshi-custom-objectives\UI\noStar.paa";
-            x = 24.5 * GUI_GRID_W + GUI_GRID_X;
-            y = 11 * GUI_GRID_H + GUI_GRID_Y;
+            x = 18 * GUI_GRID_W + GUI_GRID_X;
+            y = 13 * GUI_GRID_H + GUI_GRID_Y;
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
@@ -265,7 +270,7 @@ class DefuseDialog
         {
             idc = 1304;
             text = "\yoshi-custom-objectives\UI\noStar.paa";
-            x = 24.5 * GUI_GRID_W + GUI_GRID_X;
+            x = 19 * GUI_GRID_W + GUI_GRID_X;
             y = 13 * GUI_GRID_H + GUI_GRID_Y;
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
@@ -274,8 +279,8 @@ class DefuseDialog
         {
             idc = 1305;
             text = "\yoshi-custom-objectives\UI\noStar.paa";
-            x = 24.5 * GUI_GRID_W + GUI_GRID_X;
-            y = 15 * GUI_GRID_H + GUI_GRID_Y;
+            x = 20 * GUI_GRID_W + GUI_GRID_X;
+            y = 13 * GUI_GRID_H + GUI_GRID_Y;
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };

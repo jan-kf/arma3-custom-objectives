@@ -20,12 +20,12 @@ for "_i" from 0 to (_buttonCount-1) do {
             private _led = _data select 0;
             private _star = _data select 1;
             private _color = _data select 2;
-            private _label = format [
-                "LED:%1 STAR:%2 %3",
-                if (_led) then {"ON"} else {"OFF"},
-                if (_star) then {"YES"} else {"NO"},
-                _color
-            ];
+            // private _label = format [
+            //     "LED:%1 STAR:%2 %3",
+            //     if (_led) then {"ON"} else {"OFF"},
+            //     if (_star) then {"YES"} else {"NO"},
+            //     _color
+            // ];
             if (_led) then {
                 _ledCtrl ctrlSetText "\yoshi-custom-objectives\UI\led_on_8x8.paa";
             };
@@ -34,24 +34,24 @@ for "_i" from 0 to (_buttonCount-1) do {
             };
 
             if (_color == "Red") then {
-                _wireCtrl ctrlSetText "\yoshi-custom-objectives\UI\wireRed.paa";
+                _wireCtrl ctrlSetText "\yoshi-custom-objectives\UI\wireRed_vert.paa";
             };
             if (_color == "Blue") then {
-                _wireCtrl ctrlSetText "\yoshi-custom-objectives\UI\wireBlue.paa";
+                _wireCtrl ctrlSetText "\yoshi-custom-objectives\UI\wireBlue_vert.paa";
             };
             if (_color == "White") then {
-                _wireCtrl ctrlSetText "\yoshi-custom-objectives\UI\wireWhite.paa";
+                _wireCtrl ctrlSetText "\yoshi-custom-objectives\UI\wireWhite_vert.paa";
             };
             if (_color == "Red/Blue") then {
-                _wireCtrl ctrlSetText "\yoshi-custom-objectives\UI\wireRedBlue.paa";
+                _wireCtrl ctrlSetText "\yoshi-custom-objectives\UI\wireRedBlue_vert.paa";
             };
             if (_color == "Blue/White") then {
-                _wireCtrl ctrlSetText "\yoshi-custom-objectives\UI\wireBlueWhite.paa";
+                _wireCtrl ctrlSetText "\yoshi-custom-objectives\UI\wireBlueWhite_vert.paa";
             };
             if (_color == "Red/White") then {
-                _wireCtrl ctrlSetText "\yoshi-custom-objectives\UI\wireRedWhite.paa";
+                _wireCtrl ctrlSetText "\yoshi-custom-objectives\UI\wireRedWhite_vert.paa";
             };
-            _ctrl ctrlSetText _label;
+            // _ctrl ctrlSetText _label;
         } else {
             _ctrl ctrlShow false;
         };
