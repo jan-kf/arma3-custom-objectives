@@ -2,10 +2,15 @@ private _display = uiNamespace getVariable ["DefuseDialog", displayNull];
 if (isNull _display) exitWith {};
 
 // Retrieve the preset stored earlier
-private _preset = uiNamespace getVariable ["DefuseDialog_Preset", []];
-if (isNil "_preset" || {_preset isEqualTo []}) exitWith {};
-private _buttonCount = _preset select 0;
-private _buttonsData = _preset select 1;
+private _cw_preset = uiNamespace getVariable ["DefuseDialog_ComplexWiresPreset", []];
+if (isNil "_cw_preset" || {_cw_preset isEqualTo []}) exitWith {};
+private _extra_preset = uiNamespace getVariable ["DefuseDialog_ExtrasPreset", []];
+if (isNil "_extra_preset" || {_extra_preset isEqualTo []}) exitWith {};
+
+private _buttonCount = _cw_preset select 0;
+private _buttonsData = _cw_preset select 1;
+private _ports = _extra_preset select 0;
+private _batteries = _extra_preset select 1;
 
 
 for "_i" from 0 to (_buttonCount-1) do {
@@ -55,5 +60,21 @@ for "_i" from 0 to (_buttonCount-1) do {
         } else {
             _ctrl ctrlShow false;
         };
+    };
+};
+
+private _portCount = count _ports;
+for "_i" from 0 to (_portCount-1) do {
+    private _portCtrl = _display displayCtrl (4500 + _i);
+    if (!isNull _portCtrl) then {
+        _portCtrl ctrlSetText (format ["\yoshi-custom-objectives\UI\%1.paa", _ports select _i]);
+    };
+};
+
+private _batteryCount = count _batteries;
+for "_i" from 0 to (_batteryCount-1) do {
+    private _batteryCtrl = _display displayCtrl (4600 + _i);
+    if (!isNull _batteryCtrl) then {
+        _batteryCtrl ctrlSetText (format ["\yoshi-custom-objectives\UI\%1.paa", _batteries select _i]);
     };
 };

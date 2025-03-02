@@ -1,6 +1,6 @@
 params ["_index"];
 
-private _preset = uiNamespace getVariable ["DefuseDialog_Preset", []];
+private _preset = uiNamespace getVariable ["DefuseDialog_ComplexWiresPreset", []];
 if (isNil "_preset" || {_preset isEqualTo []}) exitWith {};
 
 private _buttonCount = _preset select 0;

@@ -1,5 +1,5 @@
 /*
-    Generates a bomb preset.
+    Generates a complex wires preset.
     Returns an array: [buttonCount, buttonData]
     where buttonData is an array of arrays [led (bool), star (bool), color (string)]
 */

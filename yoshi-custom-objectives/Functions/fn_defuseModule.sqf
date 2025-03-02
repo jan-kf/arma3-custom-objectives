@@ -7,9 +7,11 @@ if (isDedicated) exitWith {};
 
 {
     // Generate a bomb preset (an array: [buttonCount, buttonData])
-    private _preset = [] call YOSHI_CO_fnc_generateBombPreset;
+    private _preset = [] call YOSHI_CO_fnc_generateComplexWiresPreset;
+    private _extrasPreset = [] call YOSHI_CO_fnc_generateBombExtras;
     // Store the preset on the object (so each synced object can have its own configuration)
-    _x setVariable ["bombPreset", _preset, true];
+    _x setVariable ["complexWiresPreset", _preset, true];
+    _x setVariable ["extrasPreset", _extrasPreset, true];
 
     _x addAction [
         "Defuse",

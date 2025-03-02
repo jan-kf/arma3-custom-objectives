@@ -35,9 +35,12 @@ class CfgFunctions {
 			class setupButtons {
 				description = "Function to setup buttons";
 			};
-			class generateBombPreset {
-				description = "Function to generate a bomb preset";
+			class generateComplexWiresPreset {
+				description = "Function to generate a complex wires preset";
 			};
+            class generateBombExtras {
+                description = "Function to generate bomb extras";
+            };
         };
 	};
 };

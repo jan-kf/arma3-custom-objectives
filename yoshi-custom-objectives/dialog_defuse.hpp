@@ -5,7 +5,7 @@
 
 class RscText;
 class RscButton;
-class RscPictureKeepAspect;
+class RscPicture;
 class WireButton: RscButton
 {
     colorDisabled[] = {0,0,0,0};
@@ -23,36 +23,40 @@ class DefuseDialog
     movingEnable = false;
     onLoad = "uiNamespace setVariable ['DefuseDialog', _this select 0]; [] spawn YOSHI_CO_fnc_setupButtons;";
     class controlsBackground {
-        class Background: RscPictureKeepAspect {
+        class Background: RscPicture {
             idc = -1;
             x = 13.5 * GUI_GRID_W + GUI_GRID_X;
-            y = 3 * GUI_GRID_H + GUI_GRID_Y;
+            y = 2.75 * GUI_GRID_H + GUI_GRID_Y;
             w = 12 * GUI_GRID_W;
             h = 12 * GUI_GRID_H;
             text = "\yoshi-custom-objectives\UI\complexWiresModuleBackground.paa";
-            colorBackground[] = {0, 0, 0, 0.7}; // Dark transparent background
+        };
+        class Ports: RscPicture {
+            idc = -1;
+            x = 13.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 14.75 * GUI_GRID_H + GUI_GRID_Y;
+            w = 12 * GUI_GRID_W;
+            h = 2 * GUI_GRID_H;
+            text = "\yoshi-custom-objectives\UI\portPanel.paa";
+        };
+        class Batteries: RscPicture {
+            idc = -1;
+            x = 25.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 2.75 * GUI_GRID_H + GUI_GRID_Y;
+            w = 2 * GUI_GRID_W;
+            h = 12 * GUI_GRID_H;
+            text = "\yoshi-custom-objectives\UI\batteryPanel.paa";
         };
     };
 
     class controls
     {
-        // class RscText_1000: RscText
-        // {
-        //     idc = 1000;
-        //     text = "Complex Wires"; //--- ToDo: Localize;
-        //     x = 14 * GUI_GRID_W + GUI_GRID_X;
-        //     y = 0.5 * GUI_GRID_H + GUI_GRID_Y;
-        //     w = 11 * GUI_GRID_W;
-        //     h = 2 * GUI_GRID_H;
-        //     colorBackground[] = {0,0,0,0};
-        //     sizeEx = 2 * GUI_GRID_H;
-        // };
 
-        class StatusIndicator: RscPictureKeepAspect
+        class StatusIndicator: RscPicture
         {
             idc = 1000;
-            x = 22.5 * GUI_GRID_W + GUI_GRID_X;
-            y = 3.5 * GUI_GRID_H + GUI_GRID_Y;
+            x = 23 * GUI_GRID_W + GUI_GRID_X;
+            y = 3.25 * GUI_GRID_H + GUI_GRID_Y;
             w = 2 * GUI_GRID_W;
             h = 2 * GUI_GRID_H;
             text = "\yoshi-custom-objectives\UI\moduleDoneLightOff.paa";
@@ -119,7 +123,8 @@ class DefuseDialog
             action = "[5] call YOSHI_CO_fnc_handleButton;";
         };
 
-        class RscButton_1400: RscPictureKeepAspect
+        // Wires
+        class RscButton_1400: RscPicture
         {
             idc = 1400;
             x = 15 * GUI_GRID_W + GUI_GRID_X;
@@ -128,7 +133,7 @@ class DefuseDialog
             h = 8 * GUI_GRID_H;
             text = "\yoshi-custom-objectives\UI\wireNone_vert.paa";
         };
-        class RscButton_1401: RscPictureKeepAspect
+        class RscButton_1401: RscPicture
         {
             idc = 1401;
             x = 16 * GUI_GRID_W + GUI_GRID_X;
@@ -137,7 +142,7 @@ class DefuseDialog
             h = 8 * GUI_GRID_H;
             text = "\yoshi-custom-objectives\UI\wireNone_vert.paa";
         };
-        class RscButton_1402: RscPictureKeepAspect
+        class RscButton_1402: RscPicture
         {
             idc = 1402;
             x = 17 * GUI_GRID_W + GUI_GRID_X;
@@ -146,7 +151,7 @@ class DefuseDialog
             h = 8 * GUI_GRID_H;
             text = "\yoshi-custom-objectives\UI\wireNone_vert.paa";
         };
-        class RscButton_1403: RscPictureKeepAspect
+        class RscButton_1403: RscPicture
         {
             idc = 1403;
             x = 18 * GUI_GRID_W + GUI_GRID_X;
@@ -155,7 +160,7 @@ class DefuseDialog
             h = 8 * GUI_GRID_H;
             text = "\yoshi-custom-objectives\UI\wireNone_vert.paa";
         };
-        class RscButton_1404: RscPictureKeepAspect
+        class RscButton_1404: RscPicture
         {
             idc = 1404;
             x = 19 * GUI_GRID_W + GUI_GRID_X;
@@ -164,7 +169,7 @@ class DefuseDialog
             h = 8 * GUI_GRID_H;
             text = "\yoshi-custom-objectives\UI\wireNone_vert.paa";
         };
-        class RscButton_1405: RscPictureKeepAspect
+        class RscButton_1405: RscPicture
         {
             idc = 1405;
             x = 20 * GUI_GRID_W + GUI_GRID_X;
@@ -174,8 +179,8 @@ class DefuseDialog
             text = "\yoshi-custom-objectives\UI\wireNone_vert.paa";
         };
 
-
-        class RscPicture_1200: RscPictureKeepAspect 
+        // LEDs
+        class RscPicture_1200: RscPicture 
         {
             idc = 1200;
             text = "\yoshi-custom-objectives\UI\led_off_8x8.paa";
@@ -184,7 +189,7 @@ class DefuseDialog
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
-        class RscPicture_1201: RscPictureKeepAspect 
+        class RscPicture_1201: RscPicture 
         {
             idc = 1201;
             text = "\yoshi-custom-objectives\UI\led_off_8x8.paa";
@@ -193,7 +198,7 @@ class DefuseDialog
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
-        class RscPicture_1202: RscPictureKeepAspect 
+        class RscPicture_1202: RscPicture 
         {
             idc = 1202;
             text = "\yoshi-custom-objectives\UI\led_off_8x8.paa";
@@ -202,7 +207,7 @@ class DefuseDialog
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
-        class RscPicture_1203: RscPictureKeepAspect 
+        class RscPicture_1203: RscPicture 
         {
             idc = 1203;
             text = "\yoshi-custom-objectives\UI\led_off_8x8.paa";
@@ -211,7 +216,7 @@ class DefuseDialog
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
-        class RscPicture_1204: RscPictureKeepAspect 
+        class RscPicture_1204: RscPicture 
         {
             idc = 1204;
             text = "\yoshi-custom-objectives\UI\led_off_8x8.paa";
@@ -220,7 +225,7 @@ class DefuseDialog
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
-        class RscPicture_1205: RscPictureKeepAspect 
+        class RscPicture_1205: RscPicture 
         {
             idc = 1205;
             text = "\yoshi-custom-objectives\UI\led_off_8x8.paa";
@@ -230,7 +235,8 @@ class DefuseDialog
             h = 1 * GUI_GRID_H;
         };
 
-        class RscPicture_1300: RscPictureKeepAspect 
+        // stars
+        class RscPicture_1300: RscPicture 
         {
             idc = 1300;
             text = "\yoshi-custom-objectives\UI\noStar.paa";
@@ -239,7 +245,7 @@ class DefuseDialog
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
-        class RscPicture_1301: RscPictureKeepAspect 
+        class RscPicture_1301: RscPicture 
         {
             idc = 1301;
             text = "\yoshi-custom-objectives\UI\noStar.paa";
@@ -248,7 +254,7 @@ class DefuseDialog
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
-        class RscPicture_1302: RscPictureKeepAspect 
+        class RscPicture_1302: RscPicture 
         {
             idc = 1302;
             text = "\yoshi-custom-objectives\UI\noStar.paa";
@@ -257,7 +263,7 @@ class DefuseDialog
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
-        class RscPicture_1303: RscPictureKeepAspect 
+        class RscPicture_1303: RscPicture 
         {
             idc = 1303;
             text = "\yoshi-custom-objectives\UI\noStar.paa";
@@ -266,7 +272,7 @@ class DefuseDialog
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
-        class RscPicture_1304: RscPictureKeepAspect 
+        class RscPicture_1304: RscPicture 
         {
             idc = 1304;
             text = "\yoshi-custom-objectives\UI\noStar.paa";
@@ -275,7 +281,7 @@ class DefuseDialog
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
         };
-        class RscPicture_1305: RscPictureKeepAspect 
+        class RscPicture_1305: RscPicture 
         {
             idc = 1305;
             text = "\yoshi-custom-objectives\UI\noStar.paa";
@@ -283,6 +289,136 @@ class DefuseDialog
             y = 13 * GUI_GRID_H + GUI_GRID_Y;
             w = 1 * GUI_GRID_W;
             h = 1 * GUI_GRID_H;
+        };
+
+        // Ports
+        class RscPicture_4500: RscPicture 
+        {
+            idc = 4500;
+            text = "";
+            x = 13.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 14.75 * GUI_GRID_H + GUI_GRID_Y;
+            w = 12 * GUI_GRID_W;
+            h = 2 * GUI_GRID_H;
+        };
+        class RscPicture_4501: RscPicture 
+        {
+            idc = 4501;
+            text = "";
+            x = 13.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 14.75 * GUI_GRID_H + GUI_GRID_Y;
+            w = 12 * GUI_GRID_W;
+            h = 2 * GUI_GRID_H;
+        };
+        class RscPicture_4502: RscPicture 
+        {
+            idc = 4502;
+            text = "";
+            x = 13.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 14.75 * GUI_GRID_H + GUI_GRID_Y;
+            w = 12 * GUI_GRID_W;
+            h = 2 * GUI_GRID_H;
+        };
+        class RscPicture_4503: RscPicture 
+        {
+            idc = 4503;
+            text = "";
+            x = 13.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 14.75 * GUI_GRID_H + GUI_GRID_Y;
+            w = 12 * GUI_GRID_W;
+            h = 2 * GUI_GRID_H;
+        };
+        class RscPicture_4504: RscPicture 
+        {
+            idc = 4504;
+            text = "";
+            x = 13.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 14.75 * GUI_GRID_H + GUI_GRID_Y;
+            w = 12 * GUI_GRID_W;
+            h = 2 * GUI_GRID_H;
+        };
+        class RscPicture_4505: RscPicture 
+        {
+            idc = 4505;
+            text = "";
+            x = 13.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 14.75 * GUI_GRID_H + GUI_GRID_Y;
+            w = 12 * GUI_GRID_W;
+            h = 2 * GUI_GRID_H;
+        };
+
+        // Batteries
+        class RscPicture_4600: RscPicture 
+        {
+            idc = 4600;
+            text = "";
+            x = 25.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 2.75 * GUI_GRID_H + GUI_GRID_Y;
+            w = 2 * GUI_GRID_W;
+            h = 12 * GUI_GRID_H;
+        };
+        class RscPicture_4601: RscPicture 
+        {
+            idc = 4601;
+            text = "";
+            x = 25.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 2.75 * GUI_GRID_H + GUI_GRID_Y;
+            w = 2 * GUI_GRID_W;
+            h = 12 * GUI_GRID_H;
+        };
+        class RscPicture_4602: RscPicture 
+        {
+            idc = 4602;
+            text = "";
+            x = 25.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 2.75 * GUI_GRID_H + GUI_GRID_Y;
+            w = 2 * GUI_GRID_W;
+            h = 12 * GUI_GRID_H;
+        };
+        class RscPicture_4603: RscPicture 
+        {
+            idc = 4603;
+            text = "";
+            x = 25.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 2.75 * GUI_GRID_H + GUI_GRID_Y;
+            w = 2 * GUI_GRID_W;
+            h = 12 * GUI_GRID_H;
+        };
+        class RscPicture_4604: RscPicture 
+        {
+            idc = 4604;
+            text = "";
+            x = 25.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 2.75 * GUI_GRID_H + GUI_GRID_Y;
+            w = 2 * GUI_GRID_W;
+            h = 12 * GUI_GRID_H;
+        };
+        class RscPicture_4605: RscPicture 
+        {
+            idc = 4605;
+            text = "";
+            x = 25.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 2.75 * GUI_GRID_H + GUI_GRID_Y;
+            w = 2 * GUI_GRID_W;
+            h = 12 * GUI_GRID_H;
+        };
+        class RscPicture_4606: RscPicture 
+        {
+            idc = 4606;
+            text = "";
+            x = 25.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 2.75 * GUI_GRID_H + GUI_GRID_Y;
+            w = 2 * GUI_GRID_W;
+            h = 12 * GUI_GRID_H;
+        };
+        class RscPicture_4607: RscPicture 
+        {
+            idc = 4607;
+            text = "";
+            x = 25.5 * GUI_GRID_W + GUI_GRID_X;
+            y = 2.75 * GUI_GRID_H + GUI_GRID_Y;
+            w = 2 * GUI_GRID_W;
+            h = 12 * GUI_GRID_H;
         };
     };
 
