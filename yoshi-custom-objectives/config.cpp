@@ -41,6 +41,12 @@ class CfgFunctions {
             class generateBombExtras {
                 description = "Function to generate bomb extras";
             };
+            class checkComplexWiresSolution {
+                description = "Function to check the complex wires solution";
+            };
+            class helpers {
+                preInit = 1;
+            };
         };
 	};
 };

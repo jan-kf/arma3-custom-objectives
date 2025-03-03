@@ -23,7 +23,7 @@ class WireButton: RscButton
     colorDisabled[] = {0,0,0,0};
     colorBackground[] = {0,0,0,0};
     colorBackgroundDisabled[] = {0,0,0,0};
-    colorBackgroundActive[] = {0,0,0,0};
+    colorBackgroundActive[] = {0.92,0.85,0.2,0.7};
     colorFocused[] = {0,0,0,0};
     colorShadow[] = {0,0,0,0};
     colorBorder[] = {0,0,0,0};
@@ -454,10 +454,10 @@ class DefuseDialog
         class SerialNumber: RscText
         {
             idc = 4701;
-            text = "AL5QF2"; //--- ToDo: Localize;
-            x = (GUI_MODULE_1_X + (UNIT_SIZE * 0.75)) * GUI_GRID_W + GUI_GRID_X;
+            text = ""; //--- ToDo: Localize;
+            x = (GUI_MODULE_1_X + (UNIT_SIZE * 0.8)) * GUI_GRID_W + GUI_GRID_X;
             y = (1.25 * UNIT_SIZE) * GUI_GRID_H + GUI_GRID_Y;
-            w = 4 * GUI_GRID_W;
+            w = 4.5 * GUI_GRID_W;
             h = 1.5 * GUI_GRID_H;
             colorText[] = {0,0,0,1};
             sizeEx = 2 * GUI_GRID_H;
@@ -467,7 +467,7 @@ class DefuseDialog
         class Indicator: RscText
         {
             idc = 4702;
-            text = "FRQ"; //--- ToDo: Localize;
+            text = ""; //--- ToDo: Localize;
             x = (GUI_MODULE_1_X + (UNIT_SIZE * 11)) * GUI_GRID_W + GUI_GRID_X;
             y = (1.5 * UNIT_SIZE) * GUI_GRID_H + GUI_GRID_Y;
             w = GUI_SHORT_WIDTH;
