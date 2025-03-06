@@ -27,6 +27,8 @@ class WireButton: RscButton
     colorFocused[] = {0,0,0,0};
     colorShadow[] = {0,0,0,0};
     colorBorder[] = {0,0,0,0};
+    soundClick[] = {"\yoshi-custom-objectives\Sounds\cutting-wire.ogg",1,1};
+    soundEnter[] = {"\yoshi-custom-objectives\Sounds\hover.ogg",1,1};
 };
 
 class DefuseDialog

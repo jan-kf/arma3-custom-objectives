@@ -30,17 +30,26 @@ if (isNull _display) exitWith {};
 if (_isDone) then {
     private _statusCtrl = _display displayCtrl 1000;
     _statusCtrl ctrlSetText "\yoshi-custom-objectives\UI\moduleDoneLightOn.paa";
+    [_object, ["successBell", 100, 1]] remoteExec ["say3D"];
 };
 private _wireCtrl = _display displayCtrl (1400 + _index);
 _wireCtrl ctrlSetText "\yoshi-custom-objectives\UI\wireNone_vert.paa";
 
+private _buttonCtrl = _display displayCtrl (1600 + _index);
+_buttonCtrl ctrlShow false;
+
 if (!_correct) then {
-    createVehicle ["Bomb_04_F", getPosATL _object, [], 0, "CAN_COLLIDE"];
-    deleteVehicle _object;
+    private _statusCtrl = _display displayCtrl 1000;
+    _statusCtrl ctrlSetText "\yoshi-custom-objectives\UI\moduleDoneLightFail.paa";
+    [_object] spawn {
+        params ["_object"];
+
+        [_object, ["chargingSound", 300, 1]] remoteExec ["say3D"];
+        sleep 2.5;
+        createVehicle ["Bomb_04_F", getPosATL _object, [], 0, "CAN_COLLIDE"];
+    };
+    private _defuseActionNumber = _object getVariable ["defuseActionNumber", -1];
+    if (_defuseActionNumber != -1) then {
+        _object removeAction _defuseActionNumber;
+    };
 };
-
-
-hint format [
-    "Was that right?: %1",
-    _correct
-];

@@ -13,7 +13,7 @@ if (isDedicated) exitWith {};
     _x setVariable ["complexWires", _preset, true];
     _x setVariable ["extrasPreset", _extrasPreset, true];
 
-    _x addAction [
+    private _actionNumber = _x addAction [
         "Defuse",
         {
             params ["_target", "_caller", "_actionId", "_arguments"];
@@ -22,4 +22,5 @@ if (isDedicated) exitWith {};
         },
         nil, 6, false, true, "", "alive _target"
     ];
+    _x setVariable ["defuseActionNumber", _actionNumber, true];
 } forEach (synchronizedObjects _logic);

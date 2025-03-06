@@ -88,3 +88,23 @@ class CfgVehicles {
         };
     };
 };
+
+class CfgSounds {
+    sounds[] = {};
+
+    class cutWire {
+        name = "cutWire";
+        sound[] = {"\yoshi-custom-objectives\Sounds\cutting-wire.ogg", 1, 1};
+        titles[] = {};
+    };
+    class chargingSound {
+        name = "chargingSound";
+        sound[] = {"\yoshi-custom-objectives\Sounds\charging-sound.ogg", 1, 1};
+        titles[] = {};
+    };
+    class successBell {
+        name = "successBell";
+        sound[] = {"\yoshi-custom-objectives\Sounds\success-bell.ogg", 1, 1};
+        titles[] = {};
+    };
+};
