@@ -26,8 +26,11 @@ class CfgFunctions {
             class defuseModule { 
                 description = "Function to defuse the bomb"; 
             };
-            class handleButton { 
-                description = "Function to handle button"; 
+            class handleCW_Button { 
+                description = "Function to handle CW button"; 
+            };
+            class handleSW_Button { 
+                description = "Function to handle SW button"; 
             };
 			class openGUI { 
 				description = "Function to open the GUI"; 
@@ -37,6 +40,9 @@ class CfgFunctions {
 			};
 			class generateComplexWiresPreset {
 				description = "Function to generate a complex wires preset";
+			};
+            class generateSimpleWiresPreset {
+				description = "Function to generate a simple wires preset";
 			};
             class generateBombExtras {
                 description = "Function to generate bomb extras";

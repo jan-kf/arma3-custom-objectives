@@ -8,7 +8,7 @@ private _has2OrMoreBatteries = count (_extraData select 3) >= 2;
 private _solved = true;
 
 {
-	_solved = _solved && [_x, _lastDigitIsEven, _hasParallelPort, _has2OrMoreBatteries] call YOSHI_CO_CHECK_WIRE;
+	_solved = _solved && [_x, _lastDigitIsEven, _hasParallelPort, _has2OrMoreBatteries] call YOSHI_CO_CHECK_COMPLEX_WIRE;
 } forEach _wireData;
 
 _solved

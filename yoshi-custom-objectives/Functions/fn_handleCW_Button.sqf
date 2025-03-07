@@ -20,7 +20,7 @@ _data set [3, true]; // Simulate a cut wire
 uiNamespace setVariable ["DefuseDialog_ComplexWires", _complexWireData];
 _object setVariable ["complexWires", _complexWireData, true];
 
-private _correct = [_data, _lastDigitIsEven, _hasParallelPort, _has2OrMoreBatteries] call YOSHI_CO_CHECK_WIRE;
+private _correct = [_data, _lastDigitIsEven, _hasParallelPort, _has2OrMoreBatteries] call YOSHI_CO_CHECK_COMPLEX_WIRE;
 
 private _isDone = [_complexWireData, _extra_preset] call YOSHI_CO_fnc_checkComplexWiresSolution;
 

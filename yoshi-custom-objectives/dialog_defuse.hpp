@@ -51,7 +51,7 @@ class DefuseDialog
     movingEnable = false;
     onLoad = "uiNamespace setVariable ['DefuseDialog', _this select 0]; [] spawn YOSHI_CO_fnc_setupButtons;";
     class controlsBackground {
-        class Background: RscPicture {
+        class BackgroundModule00: RscPicture {
             idc = -1;
             x = GUI_MODULE_1_X * GUI_GRID_STATIC_W + GUI_GRID_X;
             y = GUI_MODULE_1_Y * GUI_GRID_STATIC_H + GUI_GRID_Y;
@@ -59,6 +59,31 @@ class DefuseDialog
             h = GUI_MODULE_HEIGHT;
             text = "\yoshi-custom-objectives\UI\complexWiresModuleBackground.paa";
         };
+        class BackgroundModule01: RscPicture {
+            idc = -1;
+            x = GUI_MODULE_1_X * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = GUI_MODULE_1_Y * GUI_GRID_STATIC_H + GUI_GRID_Y;
+            w = GUI_MODULE_WIDTH;
+            h = GUI_MODULE_HEIGHT;
+            text = "\yoshi-custom-objectives\UI\complexWiresModuleBackground.paa";
+        };
+        class BackgroundModule10: RscPicture {
+            idc = -1;
+            x = GUI_MODULE_1_X * GUI_GRID_STATIC_W + GUI_GRID_X;
+            y = GUI_MODULE_1_Y * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            w = GUI_MODULE_WIDTH;
+            h = GUI_MODULE_HEIGHT;
+            text = "\yoshi-custom-objectives\UI\complexWiresModuleBackground.paa";
+        };
+        class BackgroundModule11: RscPicture {
+            idc = -1;
+            x = GUI_MODULE_1_X * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = GUI_MODULE_1_Y * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            w = GUI_MODULE_WIDTH;
+            h = GUI_MODULE_HEIGHT;
+            text = "\yoshi-custom-objectives\UI\complexWiresModuleBackground.paa";
+        };
+        
         class Ports: RscPicture {
             idc = -1;
             x = GUI_MODULE_1_X * GUI_GRID_STATIC_W + GUI_GRID_X;
@@ -88,11 +113,41 @@ class DefuseDialog
     class controls
     {
 
-        class StatusIndicator: RscPicture
+        class StatusIndicator00: RscPicture
         {
             idc = 1000;
             x = (GUI_MODULE_1_X + (UNIT_SIZE * 12.5)) * GUI_GRID_STATIC_W + GUI_GRID_X;
             y = (GUI_MODULE_1_Y + (UNIT_SIZE * 0.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y;
+            w = 1.5 * GUI_SHORT_WIDTH;
+            h = 1.5 * GUI_SHORT_HEIGHT;
+            text = "\yoshi-custom-objectives\UI\moduleDoneLightOff.paa";
+        };
+
+        class StatusIndicator01: RscPicture
+        {
+            idc = 1001;
+            x = (GUI_MODULE_1_X + (UNIT_SIZE * 12.5)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + (UNIT_SIZE * 0.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y;
+            w = 1.5 * GUI_SHORT_WIDTH;
+            h = 1.5 * GUI_SHORT_HEIGHT;
+            text = "\yoshi-custom-objectives\UI\moduleDoneLightOff.paa";
+        };
+
+        class StatusIndicator10: RscPicture
+        {
+            idc = 1002;
+            x = (GUI_MODULE_1_X + (UNIT_SIZE * 12.5)) * GUI_GRID_STATIC_W + GUI_GRID_X;
+            y = (GUI_MODULE_1_Y + (UNIT_SIZE * 0.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            w = 1.5 * GUI_SHORT_WIDTH;
+            h = 1.5 * GUI_SHORT_HEIGHT;
+            text = "\yoshi-custom-objectives\UI\moduleDoneLightOff.paa";
+        };
+
+        class StatusIndicator11: RscPicture
+        {
+            idc = 1003;
+            x = (GUI_MODULE_1_X + (UNIT_SIZE * 12.5)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + (UNIT_SIZE * 0.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
             w = 1.5 * GUI_SHORT_WIDTH;
             h = 1.5 * GUI_SHORT_HEIGHT;
             text = "\yoshi-custom-objectives\UI\moduleDoneLightOff.paa";
@@ -106,7 +161,7 @@ class DefuseDialog
             w = 1 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 8 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
-            action = "[0] call YOSHI_CO_fnc_handleButton;";
+            action = "[0] call YOSHI_CO_fnc_handleCW_Button;";
         };
         class RscButton_1601: WireButton
         {
@@ -116,7 +171,7 @@ class DefuseDialog
             w = 1 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 8 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
-            action = "[1] call YOSHI_CO_fnc_handleButton;";
+            action = "[1] call YOSHI_CO_fnc_handleCW_Button;";
         };
         class RscButton_1602: WireButton
         {
@@ -126,7 +181,7 @@ class DefuseDialog
             w = 1 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 8 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
-            action = "[2] call YOSHI_CO_fnc_handleButton;";
+            action = "[2] call YOSHI_CO_fnc_handleCW_Button;";
         };
         class RscButton_1603: WireButton
         {
@@ -136,7 +191,7 @@ class DefuseDialog
             w = 1 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 8 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
-            action = "[3] call YOSHI_CO_fnc_handleButton;";
+            action = "[3] call YOSHI_CO_fnc_handleCW_Button;";
         };
         class RscButton_1604: WireButton
         {
@@ -146,7 +201,7 @@ class DefuseDialog
             w = 1 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 8 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
-            action = "[4] call YOSHI_CO_fnc_handleButton;";
+            action = "[4] call YOSHI_CO_fnc_handleCW_Button;";
         };
         class RscButton_1605: WireButton
         {
@@ -156,7 +211,7 @@ class DefuseDialog
             w = 1 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 8 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
-            action = "[5] call YOSHI_CO_fnc_handleButton;";
+            action = "[5] call YOSHI_CO_fnc_handleCW_Button;";
         };
 
         // Wires
@@ -490,6 +545,125 @@ class DefuseDialog
             h = GUI_GRID_STATIC_H;
             colorText[] = {1,1,1,1};
             // colorBackground[] = {0.45,0.11,0.12,1};
+        };
+
+        // simple wires
+        
+        class RscButton_4600: WireButton
+        {
+            idc = 4600;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 2)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
+            h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
+            text = "";
+            action = "[0] call YOSHI_CO_fnc_handleSW_Button;";
+        };
+        class RscButton_4601: WireButton
+        {
+            idc = 4601;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 3.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
+            h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
+            text = "";
+            action = "[1] call YOSHI_CO_fnc_handleSW_Button;";
+        };
+        class RscButton_4602: WireButton
+        {
+            idc = 4602;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
+            h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
+            text = "";
+            action = "[2] call YOSHI_CO_fnc_handleSW_Button;";
+        };
+        class RscButton_4603: WireButton
+        {
+            idc = 4603;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 6.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
+            h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
+            text = "";
+            action = "[3] call YOSHI_CO_fnc_handleSW_Button;";
+        };
+        class RscButton_4604: WireButton
+        {
+            idc = 4604;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 8)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
+            h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
+            text = "";
+            action = "[4] call YOSHI_CO_fnc_handleSW_Button;";
+        };
+        class RscButton_4605: WireButton
+        {
+            idc = 4605;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 9.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
+            h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
+            text = "";
+            action = "[5] call YOSHI_CO_fnc_handleSW_Button;";
+        };
+
+        // Wires
+        class RscButton_4400: RscPicture
+        {
+            idc = 4400;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 3)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
+            h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
+            text = "\yoshi-custom-objectives\UI\wireNone.paa";
+        };
+        class RscButton_4401: RscPicture
+        {
+            idc = 4401;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 4.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
+            h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
+            text = "\yoshi-custom-objectives\UI\wireNone.paa";
+        };
+        class RscButton_4402: RscPicture
+        {
+            idc = 4402;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 6)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
+            h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
+            text = "\yoshi-custom-objectives\UI\wireNone.paa";
+        };
+        class RscButton_4403: RscPicture
+        {
+            idc = 4403;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 7.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
+            h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
+            text = "\yoshi-custom-objectives\UI\wireNone.paa";
+        };
+        class RscButton_4404: RscPicture
+        {
+            idc = 4404;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 9)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
+            h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
+            text = "\yoshi-custom-objectives\UI\wireNone.paa";
+        };
+        class RscButton_4405: RscPicture
+        {
+            idc = 4405;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 10.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
+            h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
+            text = "\yoshi-custom-objectives\UI\wireNone.paa";
         };
     };
 

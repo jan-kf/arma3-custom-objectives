@@ -7,7 +7,7 @@ YOSHI_CO_isBlue = {
 	_color in ["Blue", "Red/Blue", "Blue/White"]
 };
 
-YOSHI_CO_CHECK_WIRE = {
+YOSHI_CO_CHECK_COMPLEX_WIRE = {
 	params ["_wire", "_lastDigitIsEven", "_hasParallelPort", "_has2OrMoreBatteries"];
 	private _led = _wire select 0;
 	private _star = _wire select 1;
