@@ -45,7 +45,7 @@ if (!_correct) then {
         params ["_object"];
 
         [_object, ["chargingSound", 300, 1]] remoteExec ["say3D"];
-        sleep 2.5;
+        sleep 2;
         createVehicle ["Bomb_04_F", getPosATL _object, [], 0, "CAN_COLLIDE"];
     };
     private _defuseActionNumber = _object getVariable ["defuseActionNumber", -1];
