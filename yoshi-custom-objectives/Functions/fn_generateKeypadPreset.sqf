@@ -40,21 +40,25 @@ private _generate_KP = {
         ["six", "euro", "tracks", "ae", "pitchfork", "nwithhat", "omega"]
     ];
     private _chosenColumn = selectRandom _columns; 
-    private _allowedColors = ["Red", "Blue", "White", "Black", "Yellow"];
-    private _buttonData = [];
+    private _shuffledGlyphs = _chosenColumn call BIS_fnc_arrayShuffle;
+    _shuffledGlyphs resize 4;
 
-    // Generate initial button data
-    for "_i" from 0 to (_buttonCount - 1) do {
-        private _color = selectRandom _allowedColors;
-        _buttonData pushBack [_color, false];
-    };
+    private _answerIndexArray = [];
+    {
+        private _index = _chosenColumn find _x;
+        _answerIndexArray pushBack _index;
+    } forEach _shuffledGlyphs;
+    _answerIndexArray sort true;
 
-    // Ensure array is always 6 values long by filling missing slots
-    while { count _buttonData < 6 } do {
-        _buttonData pushBack ["None", false];
-    };
+    private _answerGlyphs = [];
+    {
+        _answerGlyphs pushBack (_chosenColumn select _x);
+    } forEach _answerIndexArray;
 
-    [_buttonCount, _buttonData]
+    _shuffledGlyphs call BIS_fnc_arrayShuffle; // one more time for fun
+
+    [_shuffledGlyphs, _answerGlyphs, []];
+    
 };
 
 

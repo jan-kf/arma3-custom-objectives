@@ -32,6 +32,9 @@ class CfgFunctions {
             class handleSW_Button { 
                 description = "Function to handle SW button"; 
             };
+            class handleKP_Button { 
+                description = "Function to handle KP button"; 
+            };
 			class openGUI { 
 				description = "Function to open the GUI"; 
 			};
@@ -43,6 +46,9 @@ class CfgFunctions {
 			};
             class generateSimpleWiresPreset {
 				description = "Function to generate a simple wires preset";
+			};
+            class generateKeypadPreset {
+				description = "Function to generate a keypad preset";
 			};
             class generateBombExtras {
                 description = "Function to generate bomb extras";

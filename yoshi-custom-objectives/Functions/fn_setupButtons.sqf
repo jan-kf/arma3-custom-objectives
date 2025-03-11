@@ -6,6 +6,8 @@ private _complexWireData = uiNamespace getVariable ["DefuseDialog_ComplexWires",
 if (isNil "_complexWireData" || {_complexWireData isEqualTo []}) exitWith {};
 private _simpleWireData = uiNamespace getVariable ["DefuseDialog_SimpleWires", []];
 if (isNil "_simpleWireData" || {_simpleWireData isEqualTo []}) exitWith {};
+private _keypadData = uiNamespace getVariable ["DefuseDialog_Keypad", []];
+if (isNil "_keypadData" || {_keypadData isEqualTo []}) exitWith {};
 private _extra_preset = uiNamespace getVariable ["DefuseDialog_ExtrasPreset", []];
 if (isNil "_extra_preset" || {_extra_preset isEqualTo []}) exitWith {};
 
@@ -88,10 +90,22 @@ for "_i" from 0 to (_SWbuttonCount-1) do {
                 };
             } else {
                 _wireCtrl ctrlSetText "\yoshi-custom-objectives\UI\wireNone.paa";
+                _ctrl ctrlShow false;
             };
         } else {
             _ctrl ctrlShow false;
         };
+    };
+};
+
+private _keypadGlyphs = _keypadData select 0;
+
+for "_i" from 0 to (count _keypadGlyphs) do {
+    private _ctrl = _display displayCtrl (2410 + _i);
+    if (!isNull _ctrl) then {
+        _ctrl ctrlShow true;
+        private _glyph = _keypadGlyphs select _i;
+        _ctrl ctrlSetText format["\yoshi-custom-objectives\UI\keypad_%1.paa", _glyph];
     };
 };
 

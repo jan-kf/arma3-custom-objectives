@@ -45,6 +45,19 @@ class WireButton: RscButton
     soundEnter[] = {"\yoshi-custom-objectives\Sounds\hover.ogg",1,1};
 };
 
+class TileButton: RscButton
+{
+    colorDisabled[] = {0,0,0,0};
+    colorBackground[] = {0,0,0,0};
+    colorBackgroundDisabled[] = {0,0,0,0};
+    colorBackgroundActive[] = {0,0,0,0};
+    colorFocused[] = {0,0,0,0};
+    colorShadow[] = {0,0,0,0};
+    colorBorder[] = {0,0,0,0};
+    soundClick[] = {"\yoshi-custom-objectives\Sounds\tile-button-click.ogg",1,1};
+    soundEnter[] = {"\yoshi-custom-objectives\Sounds\hover.ogg",1,1};
+};
+
 class DefuseDialog
 {
     idd = 9999;
@@ -550,45 +563,45 @@ class DefuseDialog
         // hieroglyphs
 
         // buttons
-        class RscButton_2600: WireButton
+        class RscButton_2600: TileButton
         {
             idc = 2600;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 2)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 2.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y;
             w = 4 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 4 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
-            action = "[0] call YOSHI_CO_fnc_handleSW_Button;";
+            action = "[0] call YOSHI_CO_fnc_handleKP_Button;";
         };
-        class RscButton_2601: WireButton
+        class RscButton_2601: TileButton
         {
             idc = 2601;
-            x = (GUI_MODULE_1_X + ( WIRE_SCALE * 4)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE * 5)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 2.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y;
             w = 4 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 4 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
-            action = "[1] call YOSHI_CO_fnc_handleSW_Button;";
+            action = "[1] call YOSHI_CO_fnc_handleKP_Button;";
         };
-        class RscButton_2602: WireButton
+        class RscButton_2602: TileButton
         {
             idc = 2602;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 4)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 6.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y;
             w = 4 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 4 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
-            action = "[2] call YOSHI_CO_fnc_handleSW_Button;";
+            action = "[2] call YOSHI_CO_fnc_handleKP_Button;";
         };
-        class RscButton_2603: WireButton
+        class RscButton_2603: TileButton
         {
             idc = 2603;
-            x = (GUI_MODULE_1_X + ( WIRE_SCALE * 4)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 4)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE * 5)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 6.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y;
             w = 4 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 4 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
-            action = "[3] call YOSHI_CO_fnc_handleSW_Button;";
+            action = "[3] call YOSHI_CO_fnc_handleKP_Button;";
         };
 
         // pictures
@@ -596,7 +609,7 @@ class DefuseDialog
         {
             idc = 2400;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 3)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 2.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y;
             w = 4 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 4 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "\yoshi-custom-objectives\UI\keypad_blank.paa";
@@ -604,8 +617,8 @@ class DefuseDialog
         class RscButton_2401: RscPicture
         {
             idc = 2401;
-            x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 4.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE * 5)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 2.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y;
             w = 4 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 4 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "\yoshi-custom-objectives\UI\keypad_blank.paa";
@@ -614,7 +627,7 @@ class DefuseDialog
         {
             idc = 2402;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 6)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 6.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y;
             w = 4 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 4 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "\yoshi-custom-objectives\UI\keypad_blank.paa";
@@ -622,8 +635,8 @@ class DefuseDialog
         class RscButton_2403: RscPicture
         {
             idc = 2403;
-            x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 7.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE * 5)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 6.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y;
             w = 4 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 4 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "\yoshi-custom-objectives\UI\keypad_blank.paa";
@@ -633,7 +646,7 @@ class DefuseDialog
         {
             idc = 2410;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 3)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 2.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y;
             w = 4 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 4 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
@@ -641,8 +654,8 @@ class DefuseDialog
         class RscButton_2411: RscPicture
         {
             idc = 2411;
-            x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 4.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE * 5)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 2.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y;
             w = 4 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 4 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
@@ -651,7 +664,7 @@ class DefuseDialog
         {
             idc = 2412;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 6)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 6.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y;
             w = 4 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 4 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
@@ -659,8 +672,8 @@ class DefuseDialog
         class RscButton_2413: RscPicture
         {
             idc = 2413;
-            x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 7.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            x = (GUI_MODULE_1_X + ( WIRE_SCALE * 5)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 6.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y;
             w = 4 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 4 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
@@ -673,7 +686,7 @@ class DefuseDialog
         {
             idc = 4600;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 2)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 2.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
             w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
@@ -683,7 +696,7 @@ class DefuseDialog
         {
             idc = 4601;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 3.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 4)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
             w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
@@ -693,7 +706,7 @@ class DefuseDialog
         {
             idc = 4602;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 5.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
             w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
@@ -703,7 +716,7 @@ class DefuseDialog
         {
             idc = 4603;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 6.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 7)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
             w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
@@ -713,7 +726,7 @@ class DefuseDialog
         {
             idc = 4604;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 8)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 8.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
             w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
@@ -723,7 +736,7 @@ class DefuseDialog
         {
             idc = 4605;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 9.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 10)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
             w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "";
@@ -735,7 +748,7 @@ class DefuseDialog
         {
             idc = 4400;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 3)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 2.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
             w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "\yoshi-custom-objectives\UI\wireNone.paa";
@@ -744,7 +757,7 @@ class DefuseDialog
         {
             idc = 4401;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 4.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 4)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
             w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "\yoshi-custom-objectives\UI\wireNone.paa";
@@ -753,7 +766,7 @@ class DefuseDialog
         {
             idc = 4402;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 6)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 5.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
             w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "\yoshi-custom-objectives\UI\wireNone.paa";
@@ -762,7 +775,7 @@ class DefuseDialog
         {
             idc = 4403;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 7.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 7)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
             w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "\yoshi-custom-objectives\UI\wireNone.paa";
@@ -771,7 +784,7 @@ class DefuseDialog
         {
             idc = 4404;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 9)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 8.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
             w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "\yoshi-custom-objectives\UI\wireNone.paa";
@@ -780,7 +793,7 @@ class DefuseDialog
         {
             idc = 4405;
             x = (GUI_MODULE_1_X + ( WIRE_SCALE)) * GUI_GRID_STATIC_W + GUI_GRID_X + GUI_MODULE_WIDTH;
-            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 10.5)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
+            y = (GUI_MODULE_1_Y + ( WIRE_SCALE * 10)) * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
             w = 8 * GUI_GRID_STATIC_W * WIRE_SCALE;
             h = 1 * GUI_GRID_STATIC_H * WIRE_SCALE;
             text = "\yoshi-custom-objectives\UI\wireNone.paa";
