@@ -32,6 +32,7 @@
 class RscText;
 class RscButton;
 class RscPicture;
+class RscVideo;
 class WireButton: RscButton
 {
     colorDisabled[] = {0,0,0,0};
@@ -86,7 +87,7 @@ class DefuseDialog
             y = GUI_MODULE_1_Y * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT;
             w = GUI_MODULE_WIDTH;
             h = GUI_MODULE_HEIGHT;
-            text = "\yoshi-custom-objectives\UI\complexWiresModuleBackground.paa";
+            text = "\yoshi-custom-objectives\UI\morseCodeModuleBackground.paa";
         };
         class BackgroundModule11: RscPicture {
             idc = -1;
@@ -95,6 +96,18 @@ class DefuseDialog
             w = GUI_MODULE_WIDTH;
             h = GUI_MODULE_HEIGHT;
             text = "\yoshi-custom-objectives\UI\complexWiresModuleBackground.paa";
+        };
+
+        //ffmpeg -i shell.mp4 -g 1 -c:v libtheora -q:v 10 -c:a libvorbis -q:a 4 morse_shell.ogv
+        class MorseTest: RscVideo {
+            idc = -1;
+            x = GUI_MODULE_1_X * GUI_GRID_STATIC_W + GUI_GRID_X + (2 * GUI_SHORT_WIDTH);
+            y = GUI_MODULE_1_Y * GUI_GRID_STATIC_H + GUI_GRID_Y + GUI_MODULE_HEIGHT + (GUI_SHORT_HEIGHT);
+            w = GUI_SHORT_WIDTH;
+            h = GUI_SHORT_HEIGHT;
+            text = "\yoshi-custom-objectives\Videos\Morse\morse_shell.ogv";
+            autoplay = 1;
+	        loops = 100;
         };
         
         class Ports: RscPicture {

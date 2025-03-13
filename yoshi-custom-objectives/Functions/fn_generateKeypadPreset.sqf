@@ -33,7 +33,7 @@ private _generate_KP = {
 
     private _columns = [
         ["balloon", "at", "upsidedowny", "squigglyn", "squidknife", "hookn", "leftc"],
-        ["euro", "ballon", "leftc", "cursive", "hollowstar", "hookn", "questionmark"],
+        ["euro", "balloon", "leftc", "cursive", "hollowstar", "hookn", "questionmark"],
         ["copyright", "pumpkin", "cursive", "doublek", "meltedthree", "upsidedowny", "hollowstar"],
         ["six", "paragraph", "bt", "squidknife", "doublek", "questionmark", "smileyface"],
         ["pitchfork", "smileyface", "bt", "rightc", "paragraph", "dragon", "filledstar"],
